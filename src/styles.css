@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #f6c644;
+  --color-primary-dark: #e6b233;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--color-zinc-900);
+}
+
+.sf-hero {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.fade-in {
+  animation: fadeUp 1.2s ease-out both;
+}
+
+.fade-in-delay {
+  animation: fadeUp 1.2s ease-out 0.3s both;
+}
+
+.fade-in-delay-2 {
+  animation: fadeUp 1.2s ease-out 0.6s both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-ring {
+  box-shadow: 0 0 80px rgba(255, 196, 0, 0.12), 0 0 160px rgba(239, 176, 0, 0.06);
+}
