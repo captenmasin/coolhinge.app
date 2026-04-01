@@ -6,6 +6,10 @@
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <title>CoolHinge</title>
+
+  <script defer src="https://api.pirsch.io/pa.js"
+    id="pianjs"
+    data-code="luo6jgiewATj6EkRmwje3C1CMB8Dk8kZ"></script>
 </head>
 <body class="min-h-screen text-white">
 
@@ -20,7 +24,8 @@
       The most advanced hinge audio experience ever created...ever.
     </p>
     <div class="fade-in-delay-2 mt-12 flex gap-4">
-      <a href="#download" class="rounded-full bg-primary px-12 py-2.5 text-sm font-medium text-black transition hover:bg-primary/85">
+      <a href="#download" 
+      data-pirsch-event="Download App" class="rounded-full bg-primary px-12 py-2.5 text-sm font-medium text-black transition hover:bg-primary/85">
         Download
       </a>
       <!-- <a href="#features" class="rounded-full border border-white/20 px-8 py-3.5 text-sm font-medium text-primary transition hover:border-white/40">
@@ -32,28 +37,34 @@
   <!-- Features -->
   <section id="features" class="mx-auto max-w-6xl px-6 py-20">
     <div class="grid gap-6 md:grid-cols-3">
-      <div class="glow-ring rounded-3xl bg-[#1c1c1e] p-10">
+      <div class="feature-card rounded-3xl">
+        <div class="feature-card__content p-10">
         <p class="text-sm font-medium uppercase tracking-[0.25em] text-primary">Creak Engine</p>
         <h2 class="sf-hero mt-4 text-3xl text-white">A sound so real, you'll check the warranty.</h2>
         <p class="mt-5 text-base leading-relaxed text-zinc-300">
           Continuous creak mode maps audio intensity to hinge velocity at 60Hz. Spacecraft-grade engineering, squeaky-laptop-grade purpose.
         </p>
+        </div>
       </div>
 
-      <div class="glow-ring rounded-3xl bg-[#1c1c1e] p-10">
+      <div class="feature-card rounded-3xl">
+        <div class="feature-card__content p-10">
         <p class="text-sm font-medium uppercase tracking-[0.25em] text-primary">Menu Bar Native</p>
         <h2 class="sf-hero mt-4 text-3xl text-white">Invisible until you open something.</h2>
         <p class="mt-5 text-base leading-relaxed text-zinc-300">
           Lives in your menu bar showing your hinge angle in real time. A speedometer for the least important metric on your computer.
         </p>
+        </div>
       </div>
 
-      <div class="glow-ring rounded-3xl bg-[#1c1c1e] p-10">
+      <div class="feature-card rounded-3xl">
+        <div class="feature-card__content p-10">
         <p class="text-sm font-medium uppercase tracking-[0.25em] text-primary">Undocumented Sensor</p>
         <h2 class="sf-hero mt-4 text-3xl text-white">Powered by hardware Apple won't talk about.</h2>
         <p class="mt-5 text-base leading-relaxed text-zinc-300">
           A hidden HID sensor reports the exact hinge angle. Apple never documented it. We built an entire app on it.
         </p>
+        </div>
       </div>
     </div>
   </section>
@@ -61,7 +72,7 @@
   <!-- Sound Lineup -->
   <section class="border-t border-white/10 py-20 text-center">
     <p class="text-sm font-medium uppercase tracking-[0.3em] text-zinc-300">Six pro sound profiles. Zero pro use cases.</p>
-    <div class="mx-auto mt-12 grid max-w-5xl gap-px overflow-hidden rounded-2xl bg-white/10 md:grid-cols-6">
+    <div class="mx-auto mt-12 grid max-w-5xl gap-px overflow-hidden rounded-2xl bg-white/10 border border-white/5 md:grid-cols-6">
       <div class="bg-[#1c1c1e] px-4 py-7">
         <p class="text-lg font-bold text-white">Creak</p>
         <p class="mt-1 text-xs text-zinc-300">Organic. Alarming.</p>
