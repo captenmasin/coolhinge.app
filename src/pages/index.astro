@@ -1,0 +1,103 @@
+---
+import FeatureCard from "../components/FeatureCard.astro";
+import SoundProfile from "../components/SoundProfile.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const features = [
+  {
+    eyebrow: "Creak Engine",
+    title: "A sound so real, you'll check the warranty.",
+    body: "Continuous creak mode maps audio intensity to hinge velocity at 60Hz. Spacecraft-grade engineering, squeaky-laptop-grade purpose.",
+  },
+  {
+    eyebrow: "Menu Bar Native",
+    title: "Invisible until you open something.",
+    body: "Lives in your menu bar showing your hinge angle in real time. A speedometer for the least important metric on your computer.",
+  },
+  {
+    eyebrow: "Undocumented Sensor",
+    title: "Powered by hardware Apple won't talk about.",
+    body: "A hidden HID sensor reports the exact hinge angle. Apple never documented it. We built an entire app on it.",
+  },
+];
+
+const soundProfiles = [
+  { name: "Creak", description: "Organic. Alarming." },
+  { name: "Grind", description: "Flour mill style." },
+  { name: "Click", description: "Annoying. Pointless." },
+  { name: "Splinter", description: "Destruction vibes." },
+  { name: "Pipe", description: "Heavy metal.", imageSrc: "pipe.png", imageAlt: "Pipe" },
+  { name: "Squeak", description: "🤡" },
+];
+---
+
+<BaseLayout title="CoolHinge">
+  <section class="flex min-h-screen flex-col items-center justify-center p-6 text-center">
+    <img src="logo.png" alt="CoolHinge logo" class="fade-in mb-8 h-32 w-32 rounded-[22%]" />
+    <p class="fade-in mb-6 text-xs font-medium uppercase tracking-[0.2em] text-zinc-300">Introducing</p>
+    <h1 class="sf-hero fade-in-delay gradient-text px-2 pb-4 text-6xl leading-[1.05] md:text-8xl xl:text-[7.5rem]">
+      CoolHinge
+    </h1>
+    <p class="fade-in-delay-2 mt-8 max-w-2xl text-xl text-zinc-500 md:text-2xl">
+      The most advanced hinge audio experience ever created...ever.
+    </p>
+    <div class="fade-in-delay-2 mt-12 flex gap-4">
+      <a
+        href="#download"
+        data-pirsch-event="Download App"
+        class="rounded-full bg-primary px-12 py-2.5 text-sm font-medium text-black transition hover:bg-primary/85"
+      >
+        Download
+      </a>
+    </div>
+  </section>
+
+  <section id="features" class="mx-auto max-w-6xl px-6 py-20">
+    <div class="grid gap-6 md:grid-cols-3">
+      {features.map((feature) => <FeatureCard {...feature} />)}
+    </div>
+  </section>
+
+  <section class="border-t border-white/10 py-20 text-center">
+    <p class="text-sm font-medium uppercase tracking-[0.3em] text-zinc-300">
+      Six pro sound profiles. Zero pro use cases.
+    </p>
+    <div class="mx-auto mt-12 grid max-w-5xl gap-px overflow-hidden rounded-2xl border border-white/5 bg-white/10 md:grid-cols-6">
+      {soundProfiles.map((profile) => <SoundProfile {...profile} />)}
+    </div>
+  </section>
+
+  <section id="download" class="border-t border-white/10 py-28 text-center">
+    <h2 class="sf-hero mx-auto max-w-3xl text-4xl leading-tight text-white md:text-5xl">
+      Your MacBook opens silently.<br />We considered that a bug.
+    </h2>
+    <p class="mx-auto mt-8 max-w-lg text-lg text-zinc-300">Free. Local. No account. No cloud. No reason.</p>
+    <a
+      href="#"
+      class="mt-10 inline-flex rounded-full bg-primary px-10 py-4 text-sm font-medium text-black transition hover:bg-primary/85"
+    >
+      Download CoolHinge
+    </a>
+    <p class="mt-12 text-xs text-zinc-300">Requires macOS 14+. A MacBook with a hinge. Questionable judgment.</p>
+  </section>
+
+  <script>
+    const featureCards = document.querySelectorAll(".feature-card");
+
+    featureCards.forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        card.style.setProperty("--glow-x", `${x}px`);
+        card.style.setProperty("--glow-y", `${y}px`);
+      });
+
+      card.addEventListener("pointerleave", () => {
+        card.style.removeProperty("--glow-x");
+        card.style.removeProperty("--glow-y");
+      });
+    });
+  </script>
+</BaseLayout>
