@@ -1,0 +1,22 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
+const { name, description, imageSrc, imageAlt = "" } = Astro.props;
+---
+
+<div class:list={["bg-[#1c1c1e] px-4 py-7", imageSrc && "relative overflow-hidden"]}>
+  {
+    imageSrc && (
+      <img src={imageSrc} alt={imageAlt} class="absolute inset-0 size-full object-cover opacity-20" />
+    )
+  }
+  <p class:list={["text-lg font-bold text-white", imageSrc && "relative"]}>{name}</p>
+  <p class:list={[description === "🤡" ? "mt-1 text-sm text-zinc-300" : "mt-1 text-xs text-zinc-300", imageSrc && "relative"]}>
+    {description}
+  </p>
+</div>

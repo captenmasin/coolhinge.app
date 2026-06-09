@@ -1,0 +1,17 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  body: string;
+}
+
+const { eyebrow, title, body } = Astro.props;
+---
+
+<article class="feature-card rounded-3xl">
+  <div class="feature-card__content p-10">
+    <p class="text-sm font-medium uppercase tracking-[0.25em] text-primary">{eyebrow}</p>
+    <h2 class="sf-hero mt-4 text-3xl text-white">{title}</h2>
+    <p class="mt-5 text-base leading-relaxed text-zinc-300">{body}</p>
+  </div>
+</article>
